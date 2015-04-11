@@ -1,0 +1,22 @@
+<div ng-controller="PageErrorsCtrl">
+    <table ng-if="hasErrors">
+        <thead>
+            <tr>
+                <th>Url</th>
+                <th>Message</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="result in pluginContext.results">
+            <tr ng-repeat="message in result.data">
+                <td title="{{result.url}}">{{result.url | urlPath | limitTo:50}}</td>
+                <td>{{message.message}}</td>
+                <td>{{message.level | loggingLevel}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div ng-if="!hasErrors">
+        No Errors!
+    </div>
+</div>

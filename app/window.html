@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<html ng-app="webdiagnostics" ng-csp>
+    <head>
+        <title>Web Diagnostics</title>
+        <link rel="stylesheet" type="text/css" href="styles/all.css">
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <div class="large-12 columns">
+                    <h1>Web Diagnostics</h1>
+                </div>
+            </div>
+        </header>
+        <section>
+            <ng-view>
+
+            </ng-view>
+        </section>
+        <footer>
+            <div class="row">
+                <div class="large-12 columns">
+                    <small>Contributions are very welcome!</small>
+                </div>
+            </div>
+        </footer>
+        <div id=webview-container>
+            <webview src="http://google.com" id='webview'></webview>
+        </div>
+        <script src='scripts/all.js'></script>
+    </body>
+</html>

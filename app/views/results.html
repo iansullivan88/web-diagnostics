@@ -1,0 +1,17 @@
+<section id="results">
+    <div class='row'>
+        <div class="large-12 columns">
+            <ul class="vcard">
+                <li>Host: {{context.host}}</li>
+                <li>Processed Urls: {{context.processedUrlIds | keyCount}}</li>
+                <li ng-if="context.complete">Finished</li>
+                <li ng-if="context.currentUrl" title="{{context.currentUrl}}">Processing Url: {{context.currentUrl | urlPath | limitTo:50}}</li>
+            </ul>
+            <section ng-repeat="pluginContext in context.pluginContexts">
+                <h2>{{pluginContext.plugin.name}}</h2>
+                <small>{{pluginContext.plugin.desciption}}</small>
+                <ng-include src="pluginContext.viewPath"></ng-include>
+            </section>
+        </div>
+    </div>
+</section>

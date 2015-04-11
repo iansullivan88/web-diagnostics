@@ -1,0 +1,26 @@
+<div ng-controller="PageLoadTimesCtrl">
+
+
+    <ul class="vcard">
+        <li ng-if="averagePageLoadTime">Average Page Load Time: {{averagePageLoadTime | number:0}}</li>
+        <li ng-if="averagePageLoadTime">Average Asset Load Time: {{averageAssetLoadTime | number:0}}</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Url</th>
+                <th>Page Load Time (ms)</th>
+                <th>Asset Load Time (ms)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="result in pluginContext.results">
+                <td title="{{result.url}}">{{result.url | urlPath | limitTo:50}}</td>
+                <td>{{result.data.responseDuration | number:0}}</td>
+                <td>{{result.data.assetLoadDuration | number:0}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

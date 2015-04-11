@@ -1,0 +1,51 @@
+<form ng-submit="start()">
+    <div class="row">
+        <div class="large-12 columns">
+            <label for="website">Website</label>
+            <input ng-model="options.url" required id="website" type="text" placeholder="Website" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <button type="submit" class="button expand">Test!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            Advanced Options
+            <div class="switch">
+              <input id="show-advanced-options" type="checkbox" ng-model="showAdvancedOptions">
+              <label for="show-advanced-options"></label>
+            </div>
+        </div>
+    </div>
+    <div ng-show="showAdvancedOptions">
+        <div class="row">
+            <div class="medium-6 columns">
+                <label for="optionsMaxPages">Max Pages To Process</label>
+                <input id="optionsMaxPages" required type="number" ng-model="options.maxPages" />
+            </div>
+            <div class="medium-6 columns">
+                <label for="optionsPageWidth">Overriden User Agent</label>
+                <input id="optionsPageWidth" type="text" ng-model="options.overridenUserAgent" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-6 columns">
+                <label for="optionsPageWidth">Client Width</label>
+                <input id="optionsPageWidth" required type="number" ng-model="options.pageWidth" />
+            </div>
+            <div class="medium-6 columns">
+                <label for="optionsPageWidth">Client Height</label>
+                <input id="optionsPageWidth" required type="number" ng-model="options.pageHeight" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="medium-6 columns">
+                <label for="optionsClearCacheEveryPage">Clear Cache After Each Page</label>
+                <input id="optionsClearCacheEveryPage" type="checkbox" ng-model="options.clearCacheEveryPage" />
+            </div>
+        </div>
+    </div>
+
+</form>
